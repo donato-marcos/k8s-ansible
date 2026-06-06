@@ -1,0 +1,10 @@
+# host_vars/k8s-worker01.yml
+ansible_host: 172.16.1.21
+node_ipv4: 172.16.1.21
+node_ipv6: fd00:172:16:1::21
+gateway_ipv4: 172.16.1.254
+gateway_ipv6: fd00:172:16:1::254
+interfaces:
+  mgmt: enp1s0
+  cluster: enp2s0
+  storage: enp3s0

@@ -1,0 +1,56 @@
+# kubeadm.yml
+# === Pacotes Kubernetes ===
+kubernetes_version: "v1.36.0"
+k8s_packages:
+  - kubelet
+  - kubeadm
+  - kubectl
+  - cri-tools
+
+# === Containerd ===
+containerd_config_path: "/etc/containerd/config.toml"
+containerd_systemd_cgroup: true
+
+# === Tuning de SO para CNI/K8s ===
+disable_swap: true
+
+k8s_kernel_modules:
+  - br_netfilter
+  - cls_bpf
+  - ip_tables
+  - ip6_tables
+  - nf_conntrack
+  - overlay
+  - sch_ingress
+  - sch_fq
+  - xt_CT
+  - xt_mark
+  - xt_socket
+  - xt_TPROXY
+
+k8s_sysctl:
+  net.bridge.bridge-nf-call-arptables: 1
+  net.bridge.bridge-nf-call-ip6tables: 1
+  net.bridge.bridge-nf-call-iptables: 1
+  net.core.devconf_inherit_init_net: 1
+  net.netfilter.nf_conntrack_max: 1048576
+  net.ipv4.ip_forward: 1
+  net.ipv4.conf.all.forwarding: 1
+  net.ipv4.conf.default.forwarding: 1
+  net.ipv6.conf.all.forwarding: 1
+  net.ipv6.conf.default.forwarding: 1
+  net.ipv6.conf.all.disable_ipv6: 0
+  net.ipv6.conf.default.disable_ipv6: 0
+  net.ipv6.conf.all.accept_ra: 2
+  net.ipv6.conf.all.proxy_ndp: 1
+  net.ipv6.conf.default.proxy_ndp: 1
+  net.ipv4.ip_local_reserved_ports: "30000-32767"
+  net.ipv4.conf.all.rp_filter: 0
+  net.ipv4.conf.default.rp_filter: 0
+
+# === Completions ===
+k8s_bash_completion:
+  - kubectl
+  - kubeadm
+  - kubelet
+  - crictl

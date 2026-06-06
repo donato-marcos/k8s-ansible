@@ -1,0 +1,3 @@
+# k8s_masters.yml
+k8s_role: control-plane
+kubeadm_action: init

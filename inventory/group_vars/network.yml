@@ -1,0 +1,15 @@
+# network.yml
+bgp:
+  router_as: 64512
+  node_as: 64513
+  max_paths_ebgp: 4
+  multipath_relax: true
+
+nat:
+  outbound_interface: "eth0"
+  rule_id: 10
+  type: "masquerade"
+
+ndp_proxy:
+  interface: "eth0"
+  prefix: "2804:14d:3280:4043::eeee:0/112"

@@ -1,0 +1,3 @@
+# k8s_workers.yml
+k8s_role: worker
+kubeadm_action: join
