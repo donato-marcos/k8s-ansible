@@ -18,6 +18,7 @@ ansible_become_method: sudo
 # Configurações regionais
 timezone: "America/Sao_Paulo"
 locale: "en_US.UTF-8"
+keyboard_layout: br-abnt2
 
 # Diretórios específicos
 log_dir: "/var/log"
@@ -33,3 +34,4 @@ packages_common:
   - tmux
   - bash-completion
   - qemu-guest-agent
+  - python3

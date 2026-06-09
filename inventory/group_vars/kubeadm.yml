@@ -1,15 +1,28 @@
-# kubeadm.yml
+# group_vars/kubeadm.yml
 # === Pacotes Kubernetes ===
-kubernetes_version: "v1.36.0"
+kubernetes_version: "v1.36"
+kubernetes_version_full: "v1.36.0"
 k8s_packages:
   - kubelet
   - kubeadm
   - kubectl
   - cri-tools
 
-# === Containerd ===
-containerd_config_path: "/etc/containerd/config.toml"
-containerd_systemd_cgroup: true
+# === Paths ===
+kubernetes_config_dir: /etc/kubernetes
+kubelet_config_dir: /etc/kubernetes/kubelet.conf
+
+# === Containerd - SystemD ===
+containerd:
+  version: latest
+  config_path: /etc/containerd/config.toml
+  systemd_cgroup: true
+
+crictl_config:
+  runtime_endpoint: "unix:///var/run/containerd/containerd.sock"
+  image_endpoint: "unix:///var/run/containerd/containerd.sock"
+  timeout: 10
+  debug: false
 
 # === Tuning de SO para CNI/K8s ===
 disable_swap: true

@@ -1,4 +1,8 @@
 # host_vars/k8s-worker01.yml
+---
+k8s_role: worker
+kubeadm_action: join
+
 ansible_host: 172.16.1.21
 node_ipv4: 172.16.1.21
 node_ipv6: fd00:172:16:1::21

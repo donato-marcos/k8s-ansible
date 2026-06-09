@@ -1,5 +1,5 @@
 # host_vars/k8s-vyos.yml
-ansible_host: 172.16.1.254
+---
 vyos_interfaces:
   uplink: eth0
   mgmt: eth1

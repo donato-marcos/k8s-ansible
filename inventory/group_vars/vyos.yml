@@ -1,4 +1,4 @@
-# group_vars/network.yml
+# group_vars/vyos.yml
 # ================== CONFIGURAÇÃO NETWORK (Cisco, Arista etc.) ==================
 
 ansible_connection: ansible.netcommon.network_cli
@@ -15,9 +15,3 @@ ansible_ssh_pass: "alunofatec"
 # Timeout padrão para redes
 ansible_command_timeout: 60
 ansible_connect_timeout: 30
-
-vyos:
-  user: "ansible"
-  ssh_key_path: "~/.ssh/id_ed25519.pub"
-  config_mode: "configure"
-  commit_delay: 2

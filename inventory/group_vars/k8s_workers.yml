@@ -1,3 +1,4 @@
-# k8s_workers.yml
+# group_vars/k8s_workers.yml
+---
 k8s_role: worker
 kubeadm_action: join

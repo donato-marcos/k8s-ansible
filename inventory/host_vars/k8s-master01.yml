@@ -1,4 +1,8 @@
 # host_vars/k8s-master01.yml
+---
+k8s_role: control-plane
+kubeadm_is_init_node: true
+
 node_ipv4: 172.16.1.11
 node_ipv6: fd00:172:16:1::11
 gateway_ipv4: 172.16.1.254
@@ -7,9 +11,11 @@ interfaces:
   mgmt: enp1s0
   cluster: enp2s0
   storage: enp3s0
+
 cert_sans:
   - "172.16.1.11"
   - "fd00:172:16:1::11"
   - "kubernetes"
+  - "kubernetes.default"
   - "kubernetes.default.svc"
   - "kubernetes.default.svc.cluster.local"

@@ -48,3 +48,25 @@ banner:
     *          Uso não autorizado resultará em ações legais.                      *
     *                                                                             *
     *******************************************************************************
+
+  remote_login: "{{ banner.pre_login }}"
+
+  post_login: |
+    #!/bin/bash
+    echo
+    echo "*******************************************************************************"
+    echo "*                      [ AESTHAR ] - SISTEMA AUTORIZADO                       *"
+    echo "*        Último acesso registrado em: $(date -R)         *"
+    echo "*******************************************************************************"
+    echo
+    echo "► Hostname:       $(hostname)"
+    echo "► Kernel:         $(uname -r) $(uname -m)"
+    echo "► Usuário:        $(whoami)"
+    echo "► IP:             $(hostname -I | awk '{print $1}')"
+    echo "► Sessões ativas: $(who | wc -l)"
+    echo
+    echo "*******************************************************************************"
+    echo "*       [!] Este sistema é monitorado. Consulte as políticas de uso em:       *"
+    echo "*              https://www.aesthar.com.br/politicas-de-seguranca              *"
+    echo "*******************************************************************************"
+    echo
