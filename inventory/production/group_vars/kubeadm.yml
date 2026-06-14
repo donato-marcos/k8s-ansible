@@ -1,4 +1,5 @@
 # group_vars/kubeadm.yml
+---
 # === Pacotes Kubernetes ===
 kubernetes_version: "v1.36"
 kubernetes_version_full: "v1.36.0"

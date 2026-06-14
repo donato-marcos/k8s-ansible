@@ -1,5 +1,6 @@
 # group_vars/vyos.yml
-# ================== CONFIGURAÇÃO NETWORK (Cisco, Arista etc.) ==================
+---
+# === CONFIGURAÇÃO NETWORK (Cisco, Arista etc.) ===
 
 ansible_connection: ansible.netcommon.network_cli
 

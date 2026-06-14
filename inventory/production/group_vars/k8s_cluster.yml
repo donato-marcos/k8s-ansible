@@ -1,4 +1,5 @@
 # group_vars/k8s_cluster.yml
+---
 k8s_cluster_name: "kubernetes"
 k8s_dns_domain: "cluster.local"
 
